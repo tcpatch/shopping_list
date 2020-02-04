@@ -13,3 +13,17 @@ Bare bone objects are written to hold ingredients and recipes.
 * all_ingredients.py object to hold a master list of ingredients sourced from ingredient_list
 
 * ingredient.pu object to hold information about individual ingredients
+
+## TODO
+
+generate CLI to:
+
+* select recipes from an organized list
+    
+    * option for organizing by day of week
+
+* selected recipes populate a shopping list
+
+* feature to add a recipe - either step by step or querying a website and parsing it - also parsing a txt file?
+
+* randomize function
