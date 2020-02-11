@@ -1,18 +1,11 @@
-class ShoppingList:
-    def __init__(self):
-        self.monday = None
-        self.tuesday = None
-        self.wednesday = None
-        self.thursday = None
-        self.friday = None
-        self.saturday = None
-        self.sunday = None
-
+import shopping_list as sl
 
 if __name__ == '__main__':
-    shopping_list = ShoppingList()
+    shopping_list = sl. ShoppingList()
     week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     for day in week:
         recipe = str(input('Dinner for {}: '.format(day)))
         setattr(shopping_list, day, recipe)
+    shopping_list.compile_recipes()
+    print(shopping_list.requestes_recipes)
 
