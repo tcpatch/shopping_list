@@ -2,7 +2,7 @@ import all_ingredients
 
 class Recipe:
 
-    def __init__(self, name=None, prep_time=0, cook_time=0, total_time=0, cook_temp=0, ingredients=list(), recipe=None, sub_recipe=None):
+    def __init__(self, name=None, prep_time=0, cook_time=0, total_time=0, cook_temp=0, ingredients=list(), recipe=None, sub_recipe=None, fp=None):
         self.all_ingredients = all_ingredients.Ingredients() 
         
         self.name = name
@@ -28,3 +28,5 @@ class Recipe:
                     self.all_ingredients.add(i)
             self._ingredients = ingredients
 
+        def load_from_file(self, fp):
+            pass
