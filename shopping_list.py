@@ -24,3 +24,6 @@ class ShoppingList:
                 recipe_book.append(recipe.Recipe(fp=fp))
         return recipe_book
 
+    def  generate_tag_table(self):
+        for r in self.recipe_book:
+            recipe_tags = r.tags #todo finish...
