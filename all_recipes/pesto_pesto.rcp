@@ -1,7 +1,15 @@
+<name>
 pesto pasta
+</name>
+<prep_time>
 15
+</prep_time>
+<cook_time>
 30
+</cook_time>
+<cook_temp>
 350
+</cook_temp>
 <tags>
 vegitarian/pesto pasta
 pasta/pesto pasta
