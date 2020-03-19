@@ -1,4 +1,5 @@
 import all_ingredients
+import os
 
 class Recipe:
 
@@ -17,6 +18,10 @@ class Recipe:
         self.recipe = recipe
         self.sub_recipe = None
         self.tags = None
+        self.tag_dict = dict()
+        if os.path.exists(fp):
+            self.load_from_file(fp)
+        self.parse_tags()
 
     @property
     def ingredients(self):
@@ -92,5 +97,5 @@ class Recipe:
                         current_dict = current_dict[t]
                 else:
                     current_dict = current_dict[t] #TODO deal with if end of another tag in dictionary...
-        print(tag_dict)
+        self.tag_dict = tag_dict
 
