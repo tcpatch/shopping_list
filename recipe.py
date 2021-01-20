@@ -17,11 +17,11 @@ class Recipe:
         self._ingredients = ingredients
         self.recipe = recipe
         self.sub_recipe = None
-        self.tags = None
+        self._tags = list()
         self.tag_dict = dict()
         if os.path.exists(fp):
             self.load_from_file(fp)
-        self.parse_tags()
+#        self.parse_tags()
 
     @property
     def ingredients(self):
@@ -33,6 +33,16 @@ class Recipe:
             if i not in self.all_ingredients:
                 self.all_ingredients.add(i)
             self._ingredients = ingredients
+
+    @property
+    def tags(self):
+        return self._tags
+    
+    @tags.setter
+    def tags(self, tags):
+        if isinstance(tags, str):
+            tags = [tags]
+        self._tags.extend(tags)
 
     @staticmethod
     def as_type(i, _type):
@@ -50,7 +60,7 @@ class Recipe:
             ret = i
         return ret
 
-    def find_tag(self, lines, tag, _type=None):
+    def find_fp_tag(self, lines, tag, _type=None):
         start_tag = '<' + tag + '>'
         end_tag = '</' + tag + '>'
         start = lines.index(start_tag) + 1
@@ -66,23 +76,23 @@ class Recipe:
         with open(fp, 'r') as f:
             lines = f.readlines()
         lines = [i.strip() for i in lines]
-        tags = [('name', 'str'), 
-                ('prep_time', 'int'),
-                ('cook_time', 'int'),
-                ('cook_temp', 'int'),
-                ('ingredients', None),
-                ('recipe', None),
-                ('tags', None)]
-        for t in tags:
+        fp_tags = [('name', 'str'), 
+                   ('prep_time', 'int'),
+                   ('cook_time', 'int'),
+                   ('cook_temp', None),
+                   ('ingredients', None),
+                   ('recipe', None),
+                   ('tags', None)]
+        for t in fp_tags:
             if t[0] == 'ingredients':
-                setattr(self, '_ingredients', self.find_tag(lines, t[0], t[1]))
+                setattr(self, '_ingredients', self.find_fp_tag(lines, t[0], t[1]))
             else:
-                setattr(self, t[0], self.find_tag(lines, t[0], t[1]))
+                setattr(self, t[0], self.find_fp_tag(lines, t[0], t[1]))
         self.total_time = self.prep_time + self.cook_time
 
     def parse_tags(self):
         tag_dict = dict()
-        for tag in self.tags:
+        for tag in self.tags:   
             tag_path = tag.split('/')
             path_length = len(tag_path) - 1
             current_dict = tag_dict
@@ -99,3 +109,5 @@ class Recipe:
                     current_dict = current_dict[t] #TODO deal with if end of another tag in dictionary...
         self.tag_dict = tag_dict
 
+    def display(self):
+        return self.name
