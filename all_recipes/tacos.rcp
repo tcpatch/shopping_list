@@ -1,0 +1,31 @@
+<name>
+tacos
+</name>
+<prep_time>
+10
+</prep_time>
+<cook_time>
+25
+</cook_time>
+<cook_temp>
+medium
+</cook_temp>
+<tags>
+mexican/tacos
+</tags>
+<ingredients>
+spanish rice, 1
+onion, 1
+green pepper, 1
+taco shells, 1
+black beans, 16 oz
+frozen corn, 1
+ground beef, 1 lb
+</ingredients>
+<recipe>
+1) cook spanish rice according to box instructions
+2) cook ground beef with taco seasoning
+3) cook onions and green peppers
+4) cook black beans and frozen corn
+5) combine all ingredients
+</recipe>

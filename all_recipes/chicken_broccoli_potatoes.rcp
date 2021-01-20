@@ -1,0 +1,26 @@
+<name>
+chicken broccoli potatoes
+</name>
+<prep_time>
+10
+</prep_time>
+<cook_time>
+15
+</cook_time>
+<cook_temp>
+400
+</cook_temp>
+<tags>
+meat meal/chicken broccoli potatoes
+</tags>
+<ingredients>
+chicken, 1 lb
+broccoli, 1
+potatoes, 1
+sweet potatoes, 1
+</ingredients>
+<recipe>
+1) cook potatoes
+1) cook chicken
+2) cook broccoli
+</recipe>
