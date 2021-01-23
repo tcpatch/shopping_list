@@ -16,6 +16,8 @@ def get_recipe_input(day, shopping_list):
         response = str(input('Dinner name or tag selection: '))
         try:
             selected_int = int(response)
+            if selected_int == 0:
+                get_recipe_input(day, shopping_list)
             selected_tag = number_mapping[selected_int]
         except ValueError:
             selected_tag = response.lower()
@@ -35,16 +37,11 @@ def get_recipe_input(day, shopping_list):
 
 if __name__ == '__main__':
     # TODO:
-    # bulgogli
-    # stir fry
-    # chicken broccoli potatoes
-    # chicken broccoli rice
-    # steak potatoes rice
-    # steak potatoes broccoli
     # stuffed zucchini
     # regular pasta
     # kale salad
     # lentils
+    # lentils with hot dogs
     # southwest salad
     # beef stew
     # chicken fajita pasta

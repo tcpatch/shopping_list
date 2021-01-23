@@ -53,22 +53,24 @@ class ShoppingList:
                     else:
                         ret_dict[current_tag] = [r]
         all_tags.sort()
-        if len(ret_dict.keys()) == 1:
-            potential_recipes = ret_dict[list(ret_dict.keys())[0]]
-            if len(potential_recipes) == 1:
-                potential_recipe = potential_recipes[0]
-                for i in potential_recipe.tags:
-                    if tag_level > 0:
-                        previous_tag = i.split('/')[tag_level - 1]
-                    else:
-                        previous_tag = None
-                    if previous_tag == selected_tag:
-                        if i.split('/')[tag_level] == potential_recipe.name and tag_level == len(potential_recipe.tags) - 1:
-                            return potential_recipe
+#        if len(ret_dict.keys()) == 1:
+#            potential_recipes = ret_dict[list(ret_dict.keys())[0]]
+#            if len(potential_recipes) == 1:
+#                potential_recipe = potential_recipes[0]
+#                for i in potential_recipe.tags:
+#                    if tag_level > 0:
+#                        previous_tag = i.split('/')[tag_level - 1]
+#                    else:
+#                        previous_tag = None
+#                    if previous_tag == selected_tag:
+#                        if i.split('/')[tag_level] == potential_recipe.name and tag_level == len(potential_recipe.tags) - 1:
+#                            return potential_recipe
 
         counter = 1
         other_ret_dict = dict()
-        for t in set(all_tags):
+        tags_to_print = list(set(all_tags))
+        tags_to_print.sort()
+        for t in tags_to_print:
             print('{})'.format(counter), t)
             other_ret_dict[counter] = t
             counter += 1
@@ -82,8 +84,15 @@ class ShoppingList:
             if dinner:
                 needed_ingredients.extend([i.split(',')[0] for i in dinner.ingredients])
 
+        print('-'*100)
         for i in user_staples:
             print('{} {}'.format(i[0], i[1]))
         for k, v in Counter(needed_ingredients).items():
             if k not in user_exclude_list:
                 print(k, v)
+        
+        print('-'*100)
+        self.compile_recipes()
+        
+        for i in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+            print('{}:'.format(i), getattr(self, i).name)

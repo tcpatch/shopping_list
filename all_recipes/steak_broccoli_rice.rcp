@@ -1,5 +1,5 @@
 <name>
-chicken broccoli potatoes
+steak broccoli rice
 </name>
 <prep_time>
 10
@@ -8,19 +8,18 @@ chicken broccoli potatoes
 20
 </cook_time>
 <cook_temp>
-400
+425
 </cook_temp>
 <tags>
-meat meal/chicken broccoli potatoes
+meat meal/steak broccoli rice
 </tags>
 <ingredients>
-chicken, 1 lb
+steak, 1 lb
 broccoli, 1
-potato, 1
-sweet potato, 1
+rice, 1
 </ingredients>
 <recipe>
-1) cut and cook potatoes
-2) cook chicken
+1) cook rice according to package
+2) cook steak
 3) cook broccoli
 </recipe>

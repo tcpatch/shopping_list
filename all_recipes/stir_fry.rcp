@@ -1,0 +1,33 @@
+<name>
+stir fry
+</name>
+<prep_time>
+15
+</prep_time>
+<cook_time>
+20
+</cook_time>
+<cook_temp>
+medium
+</cook_temp>
+<tags>
+asian/stir fry
+</tags>
+<ingredients>
+rice
+stir fry steak
+carrots
+celery
+peas
+onion
+green pepper
+soy sauce
+eggs
+</ingredients>
+<recipe>
+1) cook rice
+2) cook steak
+3) cut and cook all vegitables
+4) cook eggs
+5) combine all ingredients and add soy sauce
+</recipe>

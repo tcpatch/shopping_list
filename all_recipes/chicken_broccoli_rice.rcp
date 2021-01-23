@@ -1,5 +1,5 @@
 <name>
-chicken broccoli potatoes
+chicken broccoli rice
 </name>
 <prep_time>
 10
@@ -11,16 +11,15 @@ chicken broccoli potatoes
 400
 </cook_temp>
 <tags>
-meat meal/chicken broccoli potatoes
+meat meal/chicken broccoli rice
 </tags>
 <ingredients>
 chicken, 1 lb
 broccoli, 1
-potato, 1
-sweet potato, 1
+rice, 1
 </ingredients>
 <recipe>
-1) cut and cook potatoes
+1) cook rice according to package
 2) cook chicken
 3) cook broccoli
 </recipe>
